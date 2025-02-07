@@ -90,6 +90,13 @@
         <h1>Will you be my Valentine?</h1>
         <div class="buttons">
             <button class="yes">Yes</button>
+            <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.yes').addEventListener('click', () => {
+            window.location.href = 'yes.html';
+        });
+    });
+</script>
             <button class="no">No</button>
         </div>
     </div>
