@@ -98,27 +98,25 @@
     });
 </script>
             <button class="no">No</button>
-            <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const noButton = document.querySelector('.no');
-        const phrases = ["Por favor :(", "Piénsalo una vez más :c", "Ándale, te pago u.u"];
-        let index = 0;
-
-        noButton.addEventListener('click', () => {
-            noButton.textContent = phrases[index];
-            index = (index + 1) % phrases.length;
-        });
-
-        document.querySelector('.yes').addEventListener('click', () => {
-            window.location.href = 'yes.html';
-        });
-    });
-</script>
         </div>
     </div>
 
     
         
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const noButton = document.querySelector('.no');
+            const phrases = ["Por favor :(", "Piénsalo una vez más :c", "Ándale, te pago u.u"];
+            let index = 0;
+
+            if (noButton) {
+                noButton.addEventListener('click', () => {
+                    noButton.textContent = phrases[index];
+                    index = (index + 1) % phrases.length;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
