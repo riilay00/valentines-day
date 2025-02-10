@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Te gustaría saber qué cosas me gustan de ti?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            color: #333;
+            background: url('https://i.imgur.com/lR5saSf.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-y: auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #080707;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 2em;
+            color: #080707;
+        }
+
+        li {
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Te gustaría saber qué cosas me gustan de ti?</h1>
+        <ul>
+            <!-- Agrega aquí las cosas que te gustan de ella -->
+            <li>Tu sonrisa</li>
+            <li>Cómo te ríes de mis chistes malos</li>
+            <li>Tu forma de ser tan especial</li>
+            <li>La manera en que te preocupas por mí</li>
+        </ul>
+    </div>
+</body>
+</html>
