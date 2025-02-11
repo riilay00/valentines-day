@@ -78,6 +78,18 @@
             text-decoration: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .heart-button {
+            margin-top: 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .heart-icon {
+            width: 100px;
+            height: auto;
+        }
+
         .back-button {
             position: absolute;
             top: 20px;
@@ -91,6 +103,15 @@
         }
 
     </style>
+    <script>
+    function showList() {
+        document.querySelector('ul').style.display = 'block';
+        document.querySelector('.description').style.display = 'block';
+        document.querySelector('.prompt').style.display = 'none';
+        document.querySelector('.heart-button').style.display = 'none';
+    }
+</script>
+
 </head>
 <body>
     <a href="index.html" class="back-button">
@@ -98,6 +119,11 @@
 </a>
     <div class="container">
         <h1>¿Te gustaría saber qué cosas me gustan de ti?</h1>
+        <p class="prompt">En caso de que quieras saberlo, pícale al corazón</p>
+        <button class="heart-button" onclick="showList()">
+    <img src="https://i.giphy.com/JRsQiAN79bPWUv43Ko.webp" alt="Heart" class="heart-icon">
+</button>
+
         <ul>
             <!-- Espacios para 20 cosas -->
             <li>Tu sinceridad para decir las cosas</li>
