@@ -196,29 +196,5 @@
             Aún así, quería resumírtelo en las que considero importantes, porque fueron las que hicieron que comenzara a sentir cosas por ti.
         </div>
     </div>
-    <!-- Imagen oculta que aparecerá al presionar el botón -->
-<img src="https://i.imgur.com/xQkNfbf.png" alt="Imagen revelada" class="reveal-image" style="display: none; width: 300px; margin-top: 20px;">
-
-<!-- JavaScript para mostrar la lista e imagen con animación -->
-<script>
-    function showList() {
-        const list = document.querySelector('ul');
-        const description = document.querySelector('.description');
-        const prompt = document.querySelector('.prompt');
-        const heartButton = document.querySelector('.heart-button');
-        const image = document.querySelector('.reveal-image'); // Imagen que debe aparecer
-
-        // Agregar clase para animar la lista y descripción
-        list.classList.add('show-list');
-        description.classList.add('show-list');
-
-        // Hacer visible la imagen
-        image.style.display = 'block';
-
-        // Ocultar el texto inicial y el botón
-        prompt.style.display = 'none';
-        heartButton.style.display = 'none';
-    }
-</script>
 </body>
 </html>
