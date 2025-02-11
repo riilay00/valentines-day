@@ -3,190 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Te gustaría saber qué cosas me gustan de ti?</title>
+    <title>Lista de Gustos</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Dancing Script', cursive;
             text-align: center;
-            color: #333;
-            background: url('https://i.imgur.com/lR5saSf.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            overflow-y: auto;
+            background-color: #ffebef;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 4em;
-            color: #080707;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-        }
-
-        /* Ocultamos los elementos con una transición suave */
-        .hidden {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        /* Cuando se activa, la lista aparece con el efecto */
-        .show-list {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            font-size: 2em;
-            color: #080707;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            width: 100%;
-        }
-
-        li {
-            margin: 10px 0;
-            background: rgba(255, 223, 186, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: auto;
-            max-width: 600px;
-            display: inline-block;
-        }
-
-        .description {
-            font-size: 1.8em;
-            color: #080707;
+            flex-wrap: wrap;
             margin-top: 20px;
-            text-align: center;
-            max-width: 800px;
-            background: rgba(255, 223, 186, 0.8);
-            padding: 15px;
+            gap: 10px;
+        }
+
+        .item {
+            background-color: #ffdab9;
+            padding: 10px 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .prompt {
-            font-size: 1.5em;
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        .heart-button {
-            margin-top: 20px;
+        button {
+            background-color: #ff6b81;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
             border: none;
-            background: none;
+            border-radius: 10px;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
         }
 
-        .heart-icon {
-            width: 100px;
-            height: auto;
+        button:hover {
+            background-color: #ff4757;
         }
 
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        .fade-in {
+            opacity: 1 !important;
         }
 
-        .back-icon {
-            width: 50px;
-            height: auto;
-            cursor: pointer;
-        }
-
-        .reveal-image {
-            width: 300px;
+        .image-container {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
         }
 
+        .image-container img {
+            width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-button">
-        <img src="https://i.imgur.com/s9H64wM.png" alt="Back" class="back-icon">
-    </a>
 
-    <div class="container">
-        <h1>¿Te gustaría saber qué cosas me gustan de ti?</h1>
+    <h1>¿Te gustaría saber qué cosas me gustan de ti?</h1>
 
-        <!-- Imagen oculta al inicio -->
-        <img src="https://i.imgur.com/xQkNfbf.png" alt="Imagen sorpresa" class="reveal-image hidden" id="image">
-
-        <p class="prompt">En caso de que quieras saberlo, pícale a la osita</p>
-        
-        <button class="heart-button" onclick="showList()">
-            <img src="https://i.giphy.com/JRsQiAN79bPWUv43Ko.webp" alt="Heart" class="heart-icon">
-        </button>
-
-        <ul class="hidden" id="list">
-            <li>Tu sinceridad para decir las cosas</li>
-            <li>Que seas tan buena en las cosas que haces</li>
-            <li>Lo inteligente que eres</li>
-            <li>Lo fuerte que eres para superar los obstáculos</li>
-            <li>Que contigo me siento cómodo</li>
-            <li>Que podemos hablar de cualquier cosa</li>
-            <li>Tienes una forma de pensar especial y bonita</li>
-            <li>Tu voz y tu risa</li>
-            <li>Que seas tú misma siempre</li>
-            <li>Te preocupas por mí y por cómo me sienta</li>
-            <li>Me tienes paciencia</li>
-            <li>Eres considerada</li>
-            <li>Te gusta flamear, incluso cuando me flameas a mí</li>
-            <li>Haces que los momentos de silencio no sean incómodos</li>
-            <li>Siempre me incluyes</li>
-            <li>Tus ojos</li>
-            <li>Que digas "perdón" aunque no hayas hecho nada malo</li>
-            <li>La forma en que me tratas</li>
-            <li>Me motivas a sacar lo mejor de mí</li>
-            <li>Puedo ser yo mismo cuando estoy contigo</li>
-        </ul>
-
-        <div class="description hidden" id="description">
-            Créeme que no me alcanzaría el espacio para ponerte toooodas las cosas que me gustan de ti. 
-            Además, con el tiempo iré descubriendo nuevas, así que la lista terminará siendo infinita. 
-            Aún así, quería resumírtelo en las que considero importantes, porque fueron las que hicieron que comenzara a sentir cosas por ti.
-        </div>
+    <div class="image-container hidden" id="imageContainer">
+        <img src="https://i.imgur.com/xQkNfbf.png" alt="Imagen decorativa">
     </div>
 
-<!-- JavaScript para mostrar la lista e imagen con animación -->
-<script>
-    function showList() {
-        const list = document.getElementById("list");
-        const description = document.getElementById("description");
-        const prompt = document.querySelector(".prompt");
-        const heartButton = document.querySelector(".heart-button");
-        const image = document.getElementById("image"); // Imagen que debe aparecer
+    <button onclick="mostrarLista()">Descubrir</button>
 
-        // Agregar clase para animar los elementos
-        list.classList.add("show-list");
-        description.classList.add("show-list");
-        image.classList.add("show-list");
+    <div class="container hidden" id="listaGustos">
+        <div class="item">Tu sinceridad para decir las cosas</div>
+        <div class="item">Que seas tan buena en las cosas que haces</div>
+        <div class="item">Lo inteligente que eres</div>
+        <div class="item">Lo fuerte que eres para superar los obstáculos</div>
+        <div class="item">Que contigo me siento cómodo</div>
+        <div class="item">Tu voz y tu risa</div>
+        <div class="item">Que seas tú misma siempre</div>
+        <div class="item">Te preocupas por mí y por cómo me sienta</div>
+        <div class="item">Me tienes paciencia</div>
+        <div class="item">Eres considerada</div>
+        <div class="item">Siempre me incluyes</div>
+        <div class="item">Tus ojos</div>
+        <div class="item">Puedo ser yo mismo cuando estoy contigo</div>
+    </div>
 
-        // Ocultar el texto inicial y el botón
-        prompt.style.display = "none";
-        heartButton.style.display = "none";
-    }
-</script>
+    <script>
+        function mostrarLista() {
+            const lista = document.getElementById("listaGustos");
+            const imagen = document.getElementById("imageContainer");
+            
+            lista.classList.remove("hidden");
+            imagen.classList.remove("hidden");
+
+            setTimeout(() => {
+                lista.classList.add("fade-in");
+                imagen.classList.add("fade-in");
+            }, 50);
+        }
+    </script>
 
 </body>
 </html>
