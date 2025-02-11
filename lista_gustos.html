@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,6 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
-            background: rgba(255, 255, 255, 0);
         }
 
         h1 {
@@ -40,6 +39,9 @@
             padding: 0;
             font-size: 2em;
             color: #080707;
+            display: none; /* Oculta la lista al inicio */
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
         }
 
         li {
@@ -53,31 +55,26 @@
         }
 
         .description {
-           font-size: 1.8em;
-           color: #080707;
-           margin-top: 20px;
-           text-align: center;
-           max-width: 800px;
-           background: rgba(255, 223, 186, 0.8);
-           padding: 15px;
-           border-radius: 10px;
-           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        }
-
-        .curiosity-button {
+            font-size: 1.8em;
+            color: #080707;
             margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            color: #fff;
-            background-color: #f4a7b9;
-            border: none;
+            text-align: center;
+            max-width: 800px;
+            background: rgba(255, 223, 186, 0.8);
+            padding: 15px;
             border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none; /* Oculta la descripción al inicio */
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
         }
+
+        .prompt {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
         .heart-button {
             margin-top: 20px;
             border: none;
@@ -104,28 +101,41 @@
 
     </style>
     <script>
-    function showList() {
-        document.querySelector('ul').style.display = 'block';
-        document.querySelector('.description').style.display = 'block';
-        document.querySelector('.prompt').style.display = 'none';
-        document.querySelector('.heart-button').style.display = 'none';
-    }
-</script>
+        function showList() {
+            const list = document.querySelector('ul');
+            const description = document.querySelector('.description');
+            const prompt = document.querySelector('.prompt');
+            const heartButton = document.querySelector('.heart-button');
+
+            list.style.display = 'block';
+            description.style.display = 'block';
+            
+            // Agregar un pequeño retraso para activar la opacidad después de mostrar
+            setTimeout(() => {
+                list.style.opacity = '1';
+                description.style.opacity = '1';
+            }, 50);
+
+            prompt.style.display = 'none';
+            heartButton.style.display = 'none';
+        }
+    </script>
 
 </head>
 <body>
     <a href="index.html" class="back-button">
-    <img src="https://i.imgur.com/s9H64wM.png" alt="Back" class="back-icon">
-</a>
+        <img src="https://i.imgur.com/s9H64wM.png" alt="Back" class="back-icon">
+    </a>
+
     <div class="container">
         <h1>¿Te gustaría saber qué cosas me gustan de ti?</h1>
         <p class="prompt">En caso de que quieras saberlo, pícale al corazón</p>
+        
         <button class="heart-button" onclick="showList()">
-    <img src="https://i.giphy.com/JRsQiAN79bPWUv43Ko.webp" alt="Heart" class="heart-icon">
-</button>
+            <img src="https://i.giphy.com/JRsQiAN79bPWUv43Ko.webp" alt="Heart" class="heart-icon">
+        </button>
 
         <ul>
-            <!-- Espacios para 20 cosas -->
             <li>Tu sinceridad para decir las cosas</li>
             <li>Que seas tan buena en las cosas que haces</li>
             <li>Lo inteligente que eres</li>
@@ -134,20 +144,25 @@
             <li>Que podemos hablar de cualquier cosa</li>
             <li>Tienes una forma de pensar especial y bonita</li>
             <li>Tu voz y tu risa</li>
-            <li>Que seas tu misma siempre</li>
-            <li>Te preocupas por mi y por como me sienta</li>
+            <li>Que seas tú misma siempre</li>
+            <li>Te preocupas por mí y por cómo me sienta</li>
             <li>Me tienes paciencia</li>
             <li>Eres considerada</li>
-            <li>Te gusta flamear, incluso cuando me flameas a mi</li>
+            <li>Te gusta flamear, incluso cuando me flameas a mí</li>
             <li>Haces que los momentos de silencio no sean incómodos</li>
             <li>Siempre me incluyes</li>
             <li>Tus ojos</li>
             <li>Que digas "perdón" aunque no hayas hecho nada malo</li>
             <li>La forma en que me tratas</li>
-            <li>Me motivas a sacar lo mejor de mi</li>
+            <li>Me motivas a sacar lo mejor de mí</li>
             <li>Puedo ser yo mismo cuando estoy contigo</li>
         </ul>
-        <div class="description">Créeme que no me alcanzaría el espacio para ponerte toooodas las cosas que me gustan de ti. Además, con el tiempo iré descubriendo nuevas así que la lista terminará siendo infinita. Aún así, quería resumirtelo en las que considero importantes, porque fueron las que hicieron que comience a sentir cosas por ti.</div>
+
+        <div class="description">
+            Créeme que no me alcanzaría el espacio para ponerte toooodas las cosas que me gustan de ti. 
+            Además, con el tiempo iré descubriendo nuevas, así que la lista terminará siendo infinita. 
+            Aún así, quería resumírtelo en las que considero importantes, porque fueron las que hicieron que comenzara a sentir cosas por ti.
+        </div>
     </div>
 </body>
 </html>
