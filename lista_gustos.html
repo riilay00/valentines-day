@@ -121,6 +121,60 @@
             width: 300px;
             margin-top: 20px;
         }
+        /* Ajustes generales para que la página sea adaptable */
+        body {
+    font-size: 16px; /* Tamaño de fuente adaptable */
+    text-align: center;
+    padding: 10px;
+}
+
+        .container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Ajustar el título en móviles */
+        h1 {
+    font-size: 3em; /* Reducir tamaño en móviles */
+}
+
+/* Hacer que el video sea responsive */
+        .video-container {
+    width: 100%;
+    max-width: 600px; /* Limita el tamaño en pantallas grandes */
+}
+
+        video {
+    width: 100%;
+    height: auto;
+}
+
+/* Ajustar el botón de regreso */
+        .back-button {
+    top: 10px;
+    left: 10px;
+}
+        .back-icon {
+    width: 40px; /* Reducir tamaño en móviles */
+}
+
+/* Estilos especiales para celulares */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    .description {
+        font-size: 1.2em;
+    }
+    .video-container {
+        max-width: 100%;
+    }
+    .curiosity-button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+}
+
 
     </style>
     <script>
