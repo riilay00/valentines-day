@@ -29,8 +29,7 @@
         }
 
         .bear-image img {
-            width: 100%;
-            max-width: 400px;
+            width: 400px;
             height: auto;
             margin-bottom: 20px;
         }
@@ -44,7 +43,6 @@
 
         .buttons {
             display: flex;
-            flex-direction: column;
             gap: 20px;
             margin-top: 20px;
         }
@@ -82,23 +80,6 @@
             color: #ff3366;
             text-decoration: none;
         }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3em; /* Make the heading smaller on mobile */
-            }
-
-            .buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .buttons button {
-                padding: 15px 30px;
-                font-size: 1.5em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -110,17 +91,19 @@
         <div class="buttons">
             <button class="yes">Sí</button>
             <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    document.querySelector('.yes').addEventListener('click', () => {
-                        // Redirige a yes.html cuando se haga clic en el botón "Sí"
-                        window.location.href = 'yes.html';
-                    });
-                });
-            </script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.yes').addEventListener('click', () => {
+            window.location.href = 'yes.html';
+        });
+    });
+</script>
             <button class="no">No</button>
         </div>
     </div>
+
     
+        
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const noButton = document.querySelector('.no');
