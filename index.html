@@ -92,12 +92,20 @@
             <button class="yes">Sí</button>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    document.querySelector('.yes').addEventListener('click', () => {
-                        // Scroll hacia abajo con un desplazamiento suave
-                        window.scrollTo({
-                            top: document.body.scrollHeight,
-                            behavior: 'smooth'
-                        });
+                    const yesButton = document.querySelector('.yes');
+                    const isMobile = window.innerWidth <= 768; // Consider mobile if screen width is <= 768px
+
+                    yesButton.addEventListener('click', () => {
+                        if (isMobile) {
+                            // Scroll hacia abajo solo si es móvil
+                            window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // Redirige a yes.html en dispositivos de escritorio
+                            window.location.href = 'yes.html';
+                        }
                     });
                 });
             </script>
