@@ -91,19 +91,20 @@
         <div class="buttons">
             <button class="yes">Sí</button>
             <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('.yes').addEventListener('click', () => {
-            window.location.href = 'yes.html';
-        });
-    });
-</script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelector('.yes').addEventListener('click', () => {
+                        // Scroll hacia abajo con un desplazamiento suave
+                        window.scrollTo({
+                            top: document.body.scrollHeight,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            </script>
             <button class="no">No</button>
         </div>
     </div>
-
     
-        
-    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const noButton = document.querySelector('.no');
